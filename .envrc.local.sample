@@ -1,0 +1,11 @@
+# アドベントカレンダーの年度
+export AR_YEAR=2016
+
+# アドベントカレンダー名（「${AR_NAME}アドベントカレンダー${AR_YEAR}」の形式で表示するためのもの）
+export AR_NAME=XXXXXX
+
+# Qiita上でURLに振られているアドベントカレンダーコード
+export AR_CODE=XXXXX
+
+# 通知先Slack Incoming WebhookのURLのパス部分
+export AR_SLACK_PATH=/services/TXXXXXXX/BXXXXXXX/IXXXXXXXXXXXXXXXXX

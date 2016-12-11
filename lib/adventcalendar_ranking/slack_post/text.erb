@@ -1,0 +1,3 @@
+<% ranking.each do |item| %>
+<%= item.hatena_bookmark_count %>ブクマ: 『<<%= item.url %>|<%= item.title %>>』 by <%= item.author %>
+<% end %>
