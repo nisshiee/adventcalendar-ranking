@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class AdventcalendarRanking::Ranking
   extend Memoist
   include Virtus.model
