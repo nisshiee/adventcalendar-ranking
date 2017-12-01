@@ -15,7 +15,7 @@ class AdventcalendarRanking::Scraper
   private
 
   def document
-    @document ||= Nokogiri::HTML(open("http://qiita.com/advent-calendar/#{year}/#{code}"))
+    @document ||= Nokogiri::HTML(open("https://qiita.com/advent-calendar/#{year}/#{code}"))
   end
 
   def calendar_item_elements
@@ -37,15 +37,15 @@ class AdventcalendarRanking::Scraper
   end
 
   def author(elem)
-    elem.xpath('div[@class="adventCalendarItem_author"]/a/img').attr('alt').value
+    elem.xpath('.//*[@class="adventCalendarItem_author"]//img').attr('alt').value
   end
 
   def title_and_url(elem)
-    if !elem.xpath('div[@class="adventCalendarItem_entry"]').empty?
-      link = elem.xpath('div[@class="adventCalendarItem_entry"]/a')
+    if !elem.xpath('.//div[@class="adventCalendarItem_entry"]').empty?
+      link = elem.xpath('.//div[@class="adventCalendarItem_entry"]/a')
       [link.text.chomp, link.attr('href').value]
     else
-      [elem.xpath('div[@class="adventCalendarItem_comment"]').text.chomp, nil]
+      [elem.xpath('.//div[@class="adventCalendarItem_comment"]').text.chomp, nil]
     end
   end
 end
