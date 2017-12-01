@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 namespace :dev do
   task require: :require do
     Bundler.require(:development)

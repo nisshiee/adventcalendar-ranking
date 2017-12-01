@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 ENV['TZ'] = 'Asia/Tokyo'
 
 task :require do
